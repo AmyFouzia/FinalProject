@@ -1,17 +1,24 @@
 import java.lang.Math; 
-float x = 0.0;
-float y = 0.0;
+int x = 0;
+int y = 0;
 
 void setup() {
-  size(360 ,640); 
-  noStroke();  
+  size(400 ,640); 
+  noStroke(); 
+}
+
+void enemy(int xcor, int ycor)
+{
+  rect(xcor, ycor, 66, 66);
 }
 
 void draw() { 
   background(51);
-  x += (int) Math.random() * 2 + 1; 
-  //make it bounce off side
-  //use translate?
   y += 1;
-  rect(x, y, 66, 66);
+  
+  for (int i = 10; i < 350; i += 60)
+  {
+    enemy(i, y);
+  }
+  
 }
