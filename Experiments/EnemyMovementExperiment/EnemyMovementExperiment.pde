@@ -16,7 +16,7 @@ void draw() {
   background(51);
   y += 1;
   
-  for (int i = 10; i < 350; i += 60)
+  for (int i = 2; i < 350; i += 100)
   {
     enemy(i, y);
   }
