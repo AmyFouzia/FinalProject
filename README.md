@@ -17,8 +17,13 @@
 
 ## Tuesday, May 21, 2019
 
-- Prototype was fully approved, except I need to fix the UML
+- prototype was fully approved, except I need to fix the UML
 - character and obstacle shldnt extend bullet, make a parent class for all three
 - experimented more with enemy movement
 - multiple enemies spawn at the top with space in between and make their way towards the bottom
 - started experimenting with making a timer for scoreTracker
+
+## Wednesday, May 22, 2019
+
+- timer works, can make a scoreTracker(maybe implement a highscore?)
+- enemy movement updated so that they keep respawning at semi-random speeds

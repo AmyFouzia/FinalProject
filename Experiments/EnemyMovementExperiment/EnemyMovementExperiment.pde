@@ -9,17 +9,21 @@ void setup() {
 
 void enemy(int xcor, int ycor)
 {
-  rect(xcor, ycor, 66, 66);
+  rect(xcor, ycor, 26, 26);
 }
 
 void draw() { 
   background(51);
   y += random(1,5);
   
-  for (int i = 2; i < 350; i += 100)
+  for (int i = 70; i <= 350; i += 70)
   {
     enemy(i, y);
-    if(i == 302){ i = 2; }
+    
+    if(y > 600){ 
+    i = 70;
+    y = 0;
+    }
   }
   
 }
