@@ -14,11 +14,12 @@ void enemy(int xcor, int ycor)
 
 void draw() { 
   background(51);
-  y += 1;
+  y += random(1,5);
   
   for (int i = 2; i < 350; i += 100)
   {
     enemy(i, y);
+    if(i == 302){ i = 2; }
   }
   
 }
