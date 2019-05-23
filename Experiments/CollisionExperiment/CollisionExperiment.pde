@@ -4,6 +4,8 @@ int enemyY = -20;
 float easeX;
 float easeY;
 float easing = 1.5;
+float testX = easeX;
+float testY = easeY;
 
 void setup() {
   size(400 ,1000); 
@@ -21,12 +23,12 @@ void draw() {
   //enemy spawn
   enemyY += random(1,5);
   
-  for (int i = 50; i <= 350; i += 70)
+  for (enemyX = 50; enemyX <= 350; enemyX += 70)
   {
-    enemy(i, enemyY);
+    enemy(enemyX, enemyY);
     
     if(enemyY > 1000){ 
-    i = 50;
+    enemyX = 50;
     enemyY = -20;
     }
   }
@@ -46,5 +48,31 @@ void draw() {
   //enemy is 26*26
   //character is d = 26, r = 13
   //http://www.jeffreythompson.org/collision-detection/circle-rect.php
- 
+
+  boolean hit = circleRect(easeX, easeY, enemyX, enemyY);
+  
+}
+
+boolean circleRect(float easeX, float easeY, float enemyX, float enemyY) {
+
+  // temporaenemyY variables to set edges for testing
+  float testX = easeX;
+  float testY = easeY;
+
+  // which edge is closest?
+  if (easeX < enemyX)         testX = enemyX;      // test left edge
+  else if (easeX > enemyX+26) testX = enemyX+26;   // right edge
+  if (easeY < enemyY)         testY = enemyY;      // top edge
+  else if (easeY > enemyY+26) testY = enemyY+26;   // bottom edge
+
+  // get distance from closest edges
+  float distX = easeX-testX;
+  float distY = easeY-testY;
+  float distance = sqrt( (distX*distX) + (distY*distY) );
+
+  // if the distance is less than the radius, collision!
+  if (distance <= 13) {
+    return true;
+  }
+  return false;
 }
