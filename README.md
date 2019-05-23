@@ -27,3 +27,9 @@
 
 - timer works, can make a scoreTracker(maybe implement a highscore?)
 - enemy movement updated so that they keep respawning at semi-random speeds
+
+## Thursday, May 23, 2019
+
+- Made the screen size bigger
+- Mr.K said to make enemies autonomous and to add lives
+- updated collision with code
