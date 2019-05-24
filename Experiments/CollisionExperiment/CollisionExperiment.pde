@@ -10,11 +10,11 @@ float testY = easeY;
 void setup() {
   size(400 ,1000); 
   noStroke(); 
+  frameRate(30);
 }
 
-void enemy(int xcor, int ycor)
-{
-  rect(xcor, ycor, 26, 26);
+public void enemy(int xcor, int ycor, int size){
+  rect(xcor, ycor, size, size);
 }
 
 void draw() { 
@@ -23,9 +23,9 @@ void draw() {
   //enemy spawn
   enemyY += random(1,5);
   
-  for (enemyX = 50; enemyX <= 350; enemyX += 70)
+  for (enemyX = (int)random(45, 51); enemyX <= 350; enemyX += random(65, 71))
   {
-    enemy(enemyX, enemyY);
+    enemy(enemyX, enemyY, 26);
     
     if(enemyY > 1000){ 
     enemyX = 50;
@@ -49,30 +49,34 @@ void draw() {
   //character is d = 26, r = 13
   //http://www.jeffreythompson.org/collision-detection/circle-rect.php
 
-  boolean hit = circleRect(easeX, easeY, enemyX, enemyY);
+  boolean hit = circleRect(easeX, easeY, 13, enemyX, enemyY, 26, 26);
+  if(hit){ fill(255,150,0);}
   
 }
 
-boolean circleRect(float easeX, float easeY, float enemyX, float enemyY) {
+boolean circleRect(float cx, float cy, float radius, float rx, float ry, float rw, float rh) {
 
-  // temporaenemyY variables to set edges for testing
-  float testX = easeX;
-  float testY = easeY;
+  // temporary variables to set edges for testing
+  float testX = cx;
+  float testY = cy;
 
   // which edge is closest?
-  if (easeX < enemyX)         testX = enemyX;      // test left edge
-  else if (easeX > enemyX+26) testX = enemyX+26;   // right edge
-  if (easeY < enemyY)         testY = enemyY;      // top edge
-  else if (easeY > enemyY+26) testY = enemyY+26;   // bottom edge
+  if (cx < rx)         testX = rx;      // test left edge
+  else if (cx > rx+rw) testX = rx+rw;   // right edge
+  if (cy < ry)         testY = ry;      // top edge
+  else if (cy > ry+rh) testY = ry+rh;   // bottom edge
 
   // get distance from closest edges
-  float distX = easeX-testX;
-  float distY = easeY-testY;
+  float distX = cx-testX;
+  float distY = cy-testY;
   float distance = sqrt( (distX*distX) + (distY*distY) );
 
   // if the distance is less than the radius, collision!
-  if (distance <= 13) {
+  if (distance <= radius) {
     return true;
+  }
+  else {
+    fill(255,255,255);
   }
   return false;
 }
