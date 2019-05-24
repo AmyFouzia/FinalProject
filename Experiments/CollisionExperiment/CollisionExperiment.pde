@@ -10,7 +10,6 @@ float testY = easeY;
 void setup() {
   size(400 ,1000); 
   noStroke(); 
-  frameRate(30);
 }
 
 public void enemy(int xcor, int ycor, int size){
@@ -21,11 +20,12 @@ void draw() {
   background(51);
   
   //enemy spawn
-  enemyY += random(1,5);
+  
   
   for (enemyX = (int)random(45, 51); enemyX <= 350; enemyX += random(65, 71))
   {
     enemy(enemyX, enemyY, 26);
+    enemyY += 1;
     
     if(enemyY > 1000){ 
     enemyX = 50;
