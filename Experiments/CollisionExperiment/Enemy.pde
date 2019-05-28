@@ -2,11 +2,13 @@ public class Enemy{
 
   private int enemyX;
   private int enemyY;
+  int Size;
   
   public Enemy(int xcor, int ycor, int size){
     enemyX = xcor;
     enemyY = ycor;
-    rect(xcor, ycor, size, size);
+    Size = size;
+    rect(enemyX, enemyY, Size, Size);
   }
   
   public int getX(){
@@ -33,14 +35,23 @@ public class Enemy{
     enemyY += y;
   }
   
-  public void move(){
-    for (int i = enemyX; i <= 350; i += 70){
-      enemyY += 1;
-    
-      if(enemyY > 1000){ 
-        enemyX = (int)random(10,100);
-        enemyY = -20;
+  public boolean isAlive(){return true;}
+  
+  /*public void move(){ 
+    //while(this.isAlive()){   
+      
+       while(this.getY() < 1000){
+         this.addToY(1);
+         
+       } 
+          
+       if(this.getY() > 1000){ 
+         this.setY(-20);
+         
        }
-     }
-  }
+       
+    //}
+  }/*
+  
+  
 }

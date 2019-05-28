@@ -8,6 +8,7 @@ float testY = easeY;
 void setup() {
   size(400 ,1000); 
   noStroke(); 
+  frameRate(1.0);
 }
 
 public void enemy(int xcor, int ycor, int size){
@@ -23,6 +24,8 @@ void draw() {
   Enemy newEnemy3 = new Enemy(190, -20, 26);
   Enemy newEnemy4 = new Enemy(260, -20, 26);
   Enemy newEnemy5 = new Enemy(330, -20, 26);
+  for(int x;
+    for(int y;
   newEnemy1.move();
   newEnemy2.move();
   newEnemy3.move();
