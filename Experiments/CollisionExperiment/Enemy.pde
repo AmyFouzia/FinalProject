@@ -1,14 +1,13 @@
 public class Enemy{
 
-  private int enemyX;
-  private int enemyY;
+  private int enemyX = 50;
+  private int enemyY = 100;
   int Size;
   
   public Enemy(int xcor, int ycor, int size){
     enemyX = xcor;
     enemyY = ycor;
     Size = size;
-    rect(enemyX, enemyY, Size, Size);
   }
   
   public int getX(){
@@ -21,10 +20,14 @@ public class Enemy{
   
   public void setX(int x){
     enemyX = x;
+    background(51);
+    rect(enemyX, enemyY, Size, Size);
   }
   
   public void setY(int y){
     enemyY = y;
+    background(51);
+    rect(enemyX, enemyY, Size, Size);
   }
   
     public void addToX(int x){
@@ -51,7 +54,7 @@ public class Enemy{
        }
        
     //}
-  }/*
+  }*/
   
   
 }

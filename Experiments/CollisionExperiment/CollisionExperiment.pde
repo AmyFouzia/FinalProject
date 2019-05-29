@@ -1,4 +1,6 @@
 import java.lang.Math; 
+int enemyX = 0;
+int enemyY = -20;
 float easeX;
 float easeY;
 float easing = 1.5;
@@ -8,7 +10,7 @@ float testY = easeY;
 void setup() {
   size(400 ,1000); 
   noStroke(); 
-  frameRate(1.0);
+
 }
 
 public void enemy(int xcor, int ycor, int size){
@@ -19,19 +21,28 @@ void draw() {
   background(51);
   
   //enemy spawn
+  //enemy spawn
   Enemy newEnemy1 = new Enemy(50, -20, 26);
   Enemy newEnemy2 = new Enemy(120, -20, 26);
   Enemy newEnemy3 = new Enemy(190, -20, 26);
   Enemy newEnemy4 = new Enemy(260, -20, 26);
   Enemy newEnemy5 = new Enemy(330, -20, 26);
-  for(int x;
-    for(int y;
-  newEnemy1.move();
-  newEnemy2.move();
-  newEnemy3.move();
-  newEnemy4.move();
-  newEnemy5.move();
   
+  newEnemy1.setX(0);
+  
+  
+  
+  //enemyY += random(1,5);
+
+  /*for (enemyX = (int)random(45, 51); enemyX <= 350; enemyX += random(65, 71))
+  {
+    enemy(enemyX, enemyY, 26);
+
+    if(enemyY > 1000){ 
+    enemyX = 50;
+    enemyY = -20;
+    }
+  }*/
   
   //easing
   float targetX = mouseX;
@@ -49,12 +60,13 @@ void draw() {
   //character is d = 26, r = 13
   //http://www.jeffreythompson.org/collision-detection/circle-rect.php
 
-  //boolean hit = circleRect(easeX, easeY, 13, enemyX, enemyY, 26, 26);
-  //if(hit){ fill(255,150,0);}
-  
+  boolean hit = circleRect(easeX, easeY, 13, enemyX, enemyY, 26, 26);
+  if(hit){ fill(255,150,0);}
+
 }
 
 boolean circleRect(float cx, float cy, float radius, float rx, float ry, float rw, float rh) {
+
 
   // temporary variables to set edges for testing
   float testX = cx;
@@ -79,4 +91,4 @@ boolean circleRect(float cx, float cy, float radius, float rx, float ry, float r
     fill(255,255,255);
   }
   return false;
-}
+} 
