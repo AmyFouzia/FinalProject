@@ -1,6 +1,4 @@
 import java.lang.Math; 
-int enemyX = 0;
-int enemyY = -20;
 float easeX;
 float easeY;
 float easing = 1.5;
@@ -28,8 +26,14 @@ void draw() {
   Enemy newEnemy4 = new Enemy(260, -20, 26);
   Enemy newEnemy5 = new Enemy(330, -20, 26);
   
-  newEnemy1.setX(0);
-  
+  int y = 1;
+  for(int x = 50; x < 350; x += 70){
+    while(newEnemy1.getY() < 1000){
+      background(51);
+      newEnemy1.addToY(y);
+    }
+  }
+
   
   
   //enemyY += random(1,5);
@@ -60,8 +64,8 @@ void draw() {
   //character is d = 26, r = 13
   //http://www.jeffreythompson.org/collision-detection/circle-rect.php
 
-  boolean hit = circleRect(easeX, easeY, 13, enemyX, enemyY, 26, 26);
-  if(hit){ fill(255,150,0);}
+ // boolean hit = circleRect(easeX, easeY, 13, enemyX, enemyY, 26, 26);
+  //if(hit){ fill(255,150,0);}
 
 }
 

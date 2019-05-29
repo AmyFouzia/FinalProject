@@ -32,10 +32,12 @@ public class Enemy{
   
     public void addToX(int x){
     enemyX += x;
+    rect(enemyX, enemyY, Size, Size);
   }
   
   public void addToY(int y){
     enemyY += y;
+    rect(enemyX, enemyY, Size, Size);
   }
   
   public boolean isAlive(){return true;}
