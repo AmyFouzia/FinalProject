@@ -30,14 +30,26 @@ public class Enemy{
     rect(enemyX, enemyY, Size, Size);
   }
   
-    public void addToX(int x){
+  public void addToX(int x){
     enemyX += x;
     rect(enemyX, enemyY, Size, Size);
   }
   
   public void addToY(int y){
     enemyY += y;
-    rect(enemyX, enemyY, Size, Size);
+    rect(enemyX, enemyY, Size, Size); 
+  }
+  
+  public void move(){
+    for(int y = 1; y < 1000; y++){
+      if(this.getY() < 1000){
+        this.addToY(1);
+      }else{
+        y=1;
+        enemyY=-20;
+      }
+    }
+    
   }
   
   public boolean isAlive(){return true;}
