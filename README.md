@@ -43,7 +43,8 @@
 
 ## Thursday, May 30, 2019
 
-- a
+- finally figured out enemy movement
+- planned out next steps from here
 
 ## Friday, May 31, 2019
 

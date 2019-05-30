@@ -4,10 +4,17 @@ float easeY;
 float easing = 1.5;
 float testX = easeX;
 float testY = easeY;
+//enemy spawn
+Enemy newEnemy1 = new Enemy(50, -20, 26);
+Enemy newEnemy2 = new Enemy(120, -20, 26);
+Enemy newEnemy3 = new Enemy(190, -20, 26);
+Enemy newEnemy4 = new Enemy(260, -20, 26);
+Enemy newEnemy5 = new Enemy(330, -20, 26);
 
 void setup() {
   size(400 ,1000); 
   noStroke(); 
+  
 }
 
 public void enemy(int xcor, int ycor, int size){
@@ -17,19 +24,14 @@ public void enemy(int xcor, int ycor, int size){
 void draw() { 
   background(51);
   
-  //enemy spawn
-  //enemy spawn
-  Enemy newEnemy1 = new Enemy(50, -20, 26);
-  Enemy newEnemy2 = new Enemy(120, -20, 26);
-  Enemy newEnemy3 = new Enemy(190, -20, 26);
-  Enemy newEnemy4 = new Enemy(260, -20, 26);
-  Enemy newEnemy5 = new Enemy(330, -20, 26);
+  newEnemy1.addToY(3);
+    
+  if(newEnemy1.getY() > 990){ 
+    newEnemy1.setY(-20);
+  }
   
-  int y = 1;
-  newEnemy1.move();
-
-
-  
+  // add same code for other enemies
+  //how will they die if every enemy is one of five?
   
   //enemyY += random(1,5);
 

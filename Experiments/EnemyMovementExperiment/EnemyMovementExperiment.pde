@@ -1,6 +1,6 @@
 import java.lang.Math; 
 int x = 0;
-int y = 0;
+int y = -20;
 
 void setup() {
   size(400 ,640); 
@@ -20,9 +20,9 @@ void draw() {
   {
     enemy(i, y);
     
-    if(y > 600){ 
+    if(y > 639){ 
     i = 70;
-    y = 0;
+    y = -20;
     }
   }
   

@@ -1,7 +1,7 @@
 public class Enemy{
 
-  private int enemyX = 50;
-  private int enemyY = 100;
+  private int enemyX;
+  private int enemyY;
   int Size;
   
   public Enemy(int xcor, int ycor, int size){
@@ -36,20 +36,9 @@ public class Enemy{
   }
   
   public void addToY(int y){
+    
     enemyY += y;
     rect(enemyX, enemyY, Size, Size); 
-  }
-  
-  public void move(){
-    for(int y = 1; y < 1000; y++){
-      if(this.getY() < 1000){
-        this.addToY(1);
-      }else{
-        y=1;
-        enemyY=-20;
-      }
-    }
-    
   }
   
   public boolean isAlive(){return true;}
@@ -68,6 +57,18 @@ public class Enemy{
        }
        
     //}
+  }
+  
+    public void move(){
+    for(int y = 1; y < 1000; y++){
+      if(this.getY() < 1000){
+        this.addToY(1);
+      }else{
+        y=1;
+        enemyY=-20;
+      }
+    }
+    
   }*/
   
   
