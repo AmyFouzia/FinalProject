@@ -7,14 +7,6 @@
 - experimentation with enemy movement 
 - one rectangle moves down the screen
 
-## Friday, May 17, 2019
-
-- AP CS test
-
-## Monday, May 20, 2019
-
-- Fever :(
-
 ## Tuesday, May 21, 2019
 
 - prototype was fully approved, except I need to fix the UML
@@ -33,3 +25,27 @@
 - Made the screen size bigger
 - Mr.K said to make enemies autonomous and to add lives
 - updated collision with code
+
+## Friday, May 24, 2019
+
+- added a separate enemy class to lessen code in collision exp
+- made all the priv methods with accessors, figuring out the enemy movement
+
+## Tuesday, May 28, 2019
+
+- still transitioning into separate enemy class
+- figuring out ways to update the x and y vals for enemies to simulate autonomous movement
+
+## Wednesday, May 29, 2019
+
+- had to go back on old code, a little stuck
+- feeling like im onto something with enemy movement, def cant use for and while loops too much
+
+## Thursday, May 30, 2019
+
+- a
+
+## Friday, May 31, 2019
+
+- a
+
