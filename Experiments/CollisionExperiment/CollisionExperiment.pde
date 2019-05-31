@@ -5,29 +5,64 @@ float easing = 1.5;
 float testX = easeX;
 float testY = easeY;
 //enemy spawn
-Enemy newEnemy1 = new Enemy(50, -20, 26);
-Enemy newEnemy2 = new Enemy(120, -20, 26);
-Enemy newEnemy3 = new Enemy(190, -20, 26);
-Enemy newEnemy4 = new Enemy(260, -20, 26);
-Enemy newEnemy5 = new Enemy(330, -20, 26);
+Enemy newEnemy1 = new Enemy(1020, 50, 26);
+Enemy newEnemy2 = new Enemy(1020, 120, 26);
+Enemy newEnemy3 = new Enemy(1020, 190, 26);
+Enemy newEnemy4 = new Enemy(1020, 260, 26);
+Enemy newEnemy5 = new Enemy(1020, 330, 26);
+Enemy newEnemy6 = new Enemy(1020, 400, 26);
+Enemy newEnemy7 = new Enemy(1020, 470, 26);
+PImage background;
 
 void setup() {
-  size(400 ,1000); 
-  noStroke(); 
-  
-}
-
-public void enemy(int xcor, int ycor, int size){
-  rect(xcor, ycor, size, size);
+  size(1000, 563); 
+  background = loadImage("background.gif");
+  noStroke();  
 }
 
 void draw() { 
-  background(51);
+  background(background);
   
-  newEnemy1.addToY(3);
+  newEnemy1.subtractFromX((int)random(3, 8));
     
-  if(newEnemy1.getY() > 990){ 
-    newEnemy1.setY(-20);
+  if(newEnemy1.getX() < -20){ 
+    newEnemy1.setX(1020);
+  }
+  
+  newEnemy2.subtractFromX((int)random(3, 8));
+    
+  if(newEnemy2.getX() < -20){ 
+    newEnemy2.setX(1020);
+  }
+  
+  newEnemy3.subtractFromX((int)random(3, 8));
+    
+  if(newEnemy3.getX() < -20){ 
+    newEnemy3.setX(1020);
+  }
+  
+  newEnemy4.subtractFromX((int)random(3, 8));
+    
+  if(newEnemy4.getX() < -20){ 
+    newEnemy4.setX(1020);
+  }
+  
+  newEnemy5.subtractFromX((int)random(3, 8));
+    
+  if(newEnemy5.getX() < -20){ 
+    newEnemy5.setX(1020);
+  }
+  
+  newEnemy6.subtractFromX((int)random(3, 8));
+    
+  if(newEnemy6.getX() < -20){ 
+    newEnemy6.setX(1020);
+  }
+  
+  newEnemy7.subtractFromX((int)random(3, 8));
+    
+  if(newEnemy7.getX() < -20){ 
+    newEnemy7.setX(1020);
   }
   
   // add same code for other enemies

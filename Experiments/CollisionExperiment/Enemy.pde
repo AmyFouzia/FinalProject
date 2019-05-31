@@ -20,18 +20,18 @@ public class Enemy{
   
   public void setX(int x){
     enemyX = x;
-    background(51);
+    background(background);
     rect(enemyX, enemyY, Size, Size);
   }
   
   public void setY(int y){
     enemyY = y;
-    background(51);
+    background(background);
     rect(enemyX, enemyY, Size, Size);
   }
   
-  public void addToX(int x){
-    enemyX += x;
+  public void subtractFromX(int x){
+    enemyX -= x;
     rect(enemyX, enemyY, Size, Size);
   }
   
