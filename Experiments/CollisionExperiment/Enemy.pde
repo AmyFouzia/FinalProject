@@ -1,13 +1,14 @@
 public class Enemy{
-
+  PImage enemy;
   private int enemyX;
   private int enemyY;
   int Size;
   
-  public Enemy(int xcor, int ycor, int size){
+  public Enemy(int xcor, int ycor, int size, String file){
     enemyX = xcor;
     enemyY = ycor;
     Size = size;
+    enemy = loadImage(file);
   }
   
   public int getX(){
@@ -21,24 +22,24 @@ public class Enemy{
   public void setX(int x){
     enemyX = x;
     background(background);
-    rect(enemyX, enemyY, Size, Size);
+    image(enemy, enemyX, enemyY, Size, Size);
   }
   
   public void setY(int y){
     enemyY = y;
     background(background);
-    rect(enemyX, enemyY, Size, Size);
+    image(enemy, enemyX, enemyY, Size, Size);
   }
   
   public void subtractFromX(int x){
     enemyX -= x;
-    rect(enemyX, enemyY, Size, Size);
+    image(enemy, enemyX, enemyY, Size, Size);
   }
   
   public void addToY(int y){
     
     enemyY += y;
-    rect(enemyX, enemyY, Size, Size); 
+    image(enemy, enemyX, enemyY, Size, Size);
   }
   
   public boolean isAlive(){return true;}

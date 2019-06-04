@@ -5,13 +5,13 @@ float easing = 1.5;
 float testX = easeX;
 float testY = easeY;
 //enemy spawn
-Enemy newEnemy1 = new Enemy(1020, 50, 26);
-Enemy newEnemy2 = new Enemy(1020, 120, 26);
-Enemy newEnemy3 = new Enemy(1020, 190, 26);
-Enemy newEnemy4 = new Enemy(1020, 260, 26);
-Enemy newEnemy5 = new Enemy(1020, 330, 26);
-Enemy newEnemy6 = new Enemy(1020, 400, 26);
-Enemy newEnemy7 = new Enemy(1020, 470, 26);
+Enemy newEnemy1 = new Enemy(1020, 50, 26, "enemy.png");
+Enemy newEnemy2 = new Enemy(1020, 120, 26, "enemy.png");
+Enemy newEnemy3 = new Enemy(1020, 190, 26, "enemy.png");
+Enemy newEnemy4 = new Enemy(1020, 260, 26, "enemy.png");
+Enemy newEnemy5 = new Enemy(1020, 330, 26, "enemy.png");
+Enemy newEnemy6 = new Enemy(1020, 400, 26, "enemy.png");
+Enemy newEnemy7 = new Enemy(1020, 470, 26, "enemy.png");
 PImage background;
 
 void setup() {
