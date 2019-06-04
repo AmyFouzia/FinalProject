@@ -1,20 +1,26 @@
 import java.lang.Math; 
-float easeX;
-float easeY;
-float easing = 1.5;
-float testX = easeX;
-float testY = easeY;
+import java.util.*;
 //enemy spawn
-Enemy newEnemy1 = new Enemy(1020, 50, 26, "enemy.png");
-Enemy newEnemy2 = new Enemy(1020, 120, 26, "enemy.png");
-Enemy newEnemy3 = new Enemy(1020, 190, 26, "enemy.png");
-Enemy newEnemy4 = new Enemy(1020, 260, 26, "enemy.png");
-Enemy newEnemy5 = new Enemy(1020, 330, 26, "enemy.png");
-Enemy newEnemy6 = new Enemy(1020, 400, 26, "enemy.png");
-Enemy newEnemy7 = new Enemy(1020, 470, 26, "enemy.png");
+Enemy newEnemy1;
+Enemy newEnemy2;
+Enemy newEnemy3;
+Enemy newEnemy4;
+Enemy newEnemy5;
+Enemy newEnemy6;
+Enemy newEnemy7;
+Character character;
 PImage background;
 
 void setup() {
+  List Enemies = new ArrayList();
+  Enemies.add(newEnemy1 = new Enemy(1020, 50, 50, "enemy.png"));
+  Enemies.add(newEnemy2 = new Enemy(1020, 120, 50, "enemy.png"));
+  Enemies.add(newEnemy3 = new Enemy(1020, 190, 50, "enemy.png"));   
+  Enemies.add(newEnemy4 = new Enemy(1020, 260, 50, "enemy.png")); 
+  Enemies.add(newEnemy5 = new Enemy(1020, 330, 50, "enemy.png")); 
+  Enemies.add(newEnemy6 = new Enemy(1020, 400, 50, "enemy.png"));
+  Enemies.add(newEnemy7 = new Enemy(1020, 470, 50, "enemy.png")); 
+  
   size(1000, 563); 
   background = loadImage("background.gif");
   noStroke();  
@@ -65,39 +71,11 @@ void draw() {
     newEnemy7.setX(1020);
   }
   
+  character = new Character(1.5, "player.png");
+  character.move();
   // add same code for other enemies
   //how will they die if every enemy is one of five?
   
-  //enemyY += random(1,5);
-
-  /*for (enemyX = (int)random(45, 51); enemyX <= 350; enemyX += random(65, 71))
-  {
-    enemy(enemyX, enemyY, 26);
-
-    if(enemyY > 1000){ 
-    enemyX = 50;
-    enemyY = -20;
-    }
-  }*/
-  
-  //easing
-  float targetX = mouseX;
-  float dx = targetX - easeX;
-  easeX += dx * easing;
-  
-  float targetY = mouseY;
-  float dy = targetY - easeY;
-  easeY += dy * easing;
-  
-  ellipse(easeX, easeY, 26, 26);
-  
-  //collision
-  //enemy is 26*26
-  //character is d = 26, r = 13
-  //http://www.jeffreythompson.org/collision-detection/circle-rect.php
-
- // boolean hit = circleRect(easeX, easeY, 13, enemyX, enemyY, 26, 26);
-  //if(hit){ fill(255,150,0);}
 
 }
 
