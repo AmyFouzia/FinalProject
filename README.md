@@ -46,7 +46,22 @@
 - finally figured out enemy movement
 - planned out next steps from here
 
-## Friday, May 31, 2019
+## Tuesday, June 4, 2019
+##aka grind day
 
-- a
+- realized I was way behind
+- rather than using branches I ended up using my experiments folder to figure things out, it really helped since I was working on my own
+- moved code from draw() into two separate character and enemy classes
+- realized im an idiot for not making a parent class for them both
+- replaced them with cool images 
+- finalized enemy movement, as time progresses they get farther apart
+- finalized the player movement using vectors :( it now smoothly lags behind the cursor and looks cool
+- started working on collision detection
+- did collision btn player and enemy, it is now a simple avoidance game
+- collisionExp is done, and everything is in separate classes finally so updated prototype to show all my changes
+- started on bulletExp to actually make this into what I wanted it to be
+- it's june 5th now ...
+- 
+
+
 
