@@ -25,22 +25,13 @@ public class Character{
   }
   
   public boolean containsPoint(int X, int Y){
-    return  X >= eX &&
-            X <= eX + enemy.width &&
-            Y >= eY &&
-            Y <= eY + enemy.height;
+    if( X >= eX - 30 && X <= eX + 30 && 
+        Y >= eY - 30 && Y <= eY + 30 ){return true;}
+    return false;
   }
   
   public boolean isAlive(Enemy enemy){
     //if(isHitting(enemy)){return false;}
     return true;
   }
-  
-  public void die(){
-    background(51);
-    textSize(32);
-    text("game over", 10, 30); 
-    fill(0, 102, 153);
-  }
-  
 }

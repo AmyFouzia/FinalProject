@@ -44,10 +44,6 @@ public class Enemy{
 
   public boolean isHitting(Character Player){
     if(Player.containsPoint(this.eX, this.eY)){return true;}
-    if(Player.containsPoint(this.eX, this.eY - 75/2)){return true;}
-    if(Player.containsPoint(this.eX, this.eY - 75/2)){return true;}
-    if(Player.containsPoint(this.eX - 75/2, this.eY)){return true;}
-    if(Player.containsPoint(this.eX - 75/2, this.eY)){return true;}
     return false;
   }
   

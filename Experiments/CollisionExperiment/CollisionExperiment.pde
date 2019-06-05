@@ -2,24 +2,24 @@ import java.lang.Math;
 import java.util.*;
 //enemy spawn
 Enemy newEnemy1;
-Enemy newEnemy2;
+//Enemy newEnemy2;
 Enemy newEnemy3;
-Enemy newEnemy4;
+//Enemy newEnemy4;
 Enemy newEnemy5;
-Enemy newEnemy6;
-Enemy newEnemy7;
+//Enemy newEnemy6;
+//Enemy newEnemy7;
 Character character;
 PImage background;
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 
 void setup() {
   Enemies.add(newEnemy1 = new Enemy(1020, 50, 50, "enemy.png"));
-  Enemies.add(newEnemy2 = new Enemy(1020, 120, 50, "enemy.png"));
+  //Enemies.add(newEnemy2 = new Enemy(1020, 120, 50, "enemy.png"));
   Enemies.add(newEnemy3 = new Enemy(1020, 190, 50, "enemy.png"));   
-  Enemies.add(newEnemy4 = new Enemy(1020, 260, 50, "enemy.png")); 
+  //Enemies.add(newEnemy4 = new Enemy(1020, 260, 50, "enemy.png")); 
   Enemies.add(newEnemy5 = new Enemy(1020, 330, 50, "enemy.png")); 
-  Enemies.add(newEnemy6 = new Enemy(1020, 400, 50, "enemy.png"));
-  Enemies.add(newEnemy7 = new Enemy(1020, 470, 50, "enemy.png")); 
+  //Enemies.add(newEnemy6 = new Enemy(1020, 400, 50, "enemy.png"));
+  //Enemies.add(newEnemy7 = new Enemy(1020, 470, 50, "enemy.png")); 
   
   size(1000, 563); 
   background = loadImage("background.gif");
@@ -39,17 +39,13 @@ void draw() {
     }
     
     if(enemy.isHitting(character)){
-      character.die();
+      background(51);
+      textSize(32);
+      text("game over", 10, 30); 
+      fill(0, 102, 153);
+      noLoop();
     }
+    
+    character.move();
   }
-
-  character.move();
-  //if(hitting enemy){game over screen}
-  
-
-  //how will they die if every enemy is one of five?
-  //kill dead ones and respawn all at start of round
-  //var MODE turns invisible and harmless
-  
-
 }
