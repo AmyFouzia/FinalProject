@@ -1,49 +1,47 @@
-public class Enemy{
+public class Enemy extends Thing{
   PImage enemy;
-  private int enemyX;
-  private int enemyY;
+  private int eX;
+  private int eY;
   int Size;
   
   public Enemy(int xcor, int ycor, int size, String file){
-    enemyX = xcor;
-    enemyY = ycor;
+    eX = xcor;
+    eY = ycor;
     Size = size;
     enemy = loadImage(file);
   }
   
   public int getX(){
-    return enemyX;
+    return eX;
   }
   
   public int getY(){
-    return enemyY;
+    return eY;
   }
   
   public void setX(int x){
-    enemyX = x;
+    eX = x;
     background(background);
-    image(enemy, enemyX, enemyY, Size, Size);
+    image(enemy, eX, eY, Size, Size);
   }
   
   public void setY(int y){
-    enemyY = y;
+    eY = y;
     background(background);
-    image(enemy, enemyX, enemyY, Size, Size);
+    image(enemy, eX, eY, Size, Size);
   }
   
   public void subtractFromX(int x){
-    enemyX -= x;
-    image(enemy, enemyX, enemyY, Size, Size);
+    eX -= x;
+    image(enemy, eX, eY, Size, Size);
   }
   
   public void addToY(int y){
     
-    enemyY += y;
-    image(enemy, enemyX, enemyY, Size, Size);
+    eY += y;
+    image(enemy, eX, eY, Size, Size);
   }
-  
-  public boolean isAlive(){return true;}
-  
+
   /*public void move(){ 
     //while(this.isAlive()){   
       

@@ -10,9 +10,9 @@ Enemy newEnemy6;
 Enemy newEnemy7;
 Character character;
 PImage background;
+ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 
 void setup() {
-  List Enemies = new ArrayList();
   Enemies.add(newEnemy1 = new Enemy(1020, 50, 50, "enemy.png"));
   Enemies.add(newEnemy2 = new Enemy(1020, 120, 50, "enemy.png"));
   Enemies.add(newEnemy3 = new Enemy(1020, 190, 50, "enemy.png"));   
@@ -24,57 +24,30 @@ void setup() {
   size(1000, 563); 
   background = loadImage("background.gif");
   noStroke();  
+  
+  character = new Character(2.5, "player.png");
 }
 
 void draw() { 
   background(background);
   
-  newEnemy1.subtractFromX((int)random(3, 8));
+  for(Enemy enemy : Enemies){
+    enemy.subtractFromX((int)random(3, 8));
     
-  if(newEnemy1.getX() < -20){ 
-    newEnemy1.setX(1020);
-  }
-  
-  newEnemy2.subtractFromX((int)random(3, 8));
+    if(enemy.getX() < -20){
+      enemy.setX(1020);
+    }
     
-  if(newEnemy2.getX() < -20){ 
-    newEnemy2.setX(1020);
+    //if(gets hit by bullet){die}
   }
-  
-  newEnemy3.subtractFromX((int)random(3, 8));
-    
-  if(newEnemy3.getX() < -20){ 
-    newEnemy3.setX(1020);
-  }
-  
-  newEnemy4.subtractFromX((int)random(3, 8));
-    
-  if(newEnemy4.getX() < -20){ 
-    newEnemy4.setX(1020);
-  }
-  
-  newEnemy5.subtractFromX((int)random(3, 8));
-    
-  if(newEnemy5.getX() < -20){ 
-    newEnemy5.setX(1020);
-  }
-  
-  newEnemy6.subtractFromX((int)random(3, 8));
-    
-  if(newEnemy6.getX() < -20){ 
-    newEnemy6.setX(1020);
-  }
-  
-  newEnemy7.subtractFromX((int)random(3, 8));
-    
-  if(newEnemy7.getX() < -20){ 
-    newEnemy7.setX(1020);
-  }
-  
-  character = new Character(1.5, "player.png");
+
   character.move();
-  // add same code for other enemies
+  //if(hitting enemy){game over screen}
+  
+
   //how will they die if every enemy is one of five?
+  //kill dead ones and respawn all at start of round
+  //var MODE turns invisible and harmless
   
 
 }

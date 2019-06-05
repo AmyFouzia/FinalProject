@@ -1,26 +1,27 @@
-public class Character{
+public class Character extends Thing{
   PImage player;
-  private float easeX;
-  private float easeY;
+  private float eX;
+  private float eY;
   private float easing;
-  private float testX = easeX;
-  private float testY = easeY;
   
   public Character(float e, String file){
     easing = e;
     player = loadImage(file);
   }
   
-  public void move(){
+  public void move() {
     float targetX = mouseX;
-    float dx = targetX - easeX;
-    easeX += dx * easing;
-  
     float targetY = mouseY;
-    float dy = targetY - easeY;
-    easeY += dy * easing;
-  
-    image(player, easeX, easeY, 75, 75);
+
+    PVector d = new PVector(targetX - eX, targetY - eY);
+    if (abs(d.x) > 1 || abs(d.y) > 1) {
+      d.normalize();
+      eX += d.x*easing;
+      eY += d.y*easing;
+    }
+    
+    imageMode(CENTER);
+    image(player, eX, eY, 75, 75);
   }
   
   
