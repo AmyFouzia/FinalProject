@@ -1,4 +1,4 @@
-public class Enemy extends Thing{
+public class Enemy{
   PImage enemy;
   private int eX;
   private int eY;
@@ -42,33 +42,19 @@ public class Enemy extends Thing{
     image(enemy, eX, eY, Size, Size);
   }
 
-  /*public void move(){ 
-    //while(this.isAlive()){   
-      
-       while(this.getY() < 1000){
-         this.addToY(1);
-         
-       } 
-          
-       if(this.getY() > 1000){ 
-         this.setY(-20);
-         
-       }
-       
-    //}
+  public boolean isHitting(Character Player){
+    if(Player.containsPoint(this.eX, this.eY)){return true;}
+    if(Player.containsPoint(this.eX, this.eY - 75/2)){return true;}
+    if(Player.containsPoint(this.eX, this.eY - 75/2)){return true;}
+    if(Player.containsPoint(this.eX - 75/2, this.eY)){return true;}
+    if(Player.containsPoint(this.eX - 75/2, this.eY)){return true;}
+    return false;
   }
   
-    public void move(){
-    for(int y = 1; y < 1000; y++){
-      if(this.getY() < 1000){
-        this.addToY(1);
-      }else{
-        y=1;
-        enemyY=-20;
-      }
-    }
-    
-  }*/
+  public boolean isAlive(Enemy bullet){
+    //if(isHitting(bullet)){return false;}
+    return true;
+  }
   
   
 }
