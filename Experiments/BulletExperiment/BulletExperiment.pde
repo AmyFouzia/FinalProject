@@ -52,11 +52,12 @@ void draw() {
     character.move();
   }
   
-  for(Bullet bullet:bullets){
-    bullet.setX(bullet.getX() +10);
+  for (int b = 0; b < bullets.size(); b++){
+    bullets.get(b).setX(bullets.get(b).getX() +10);
     
-    if(bullet.getX() > 1000){
-      bullets.remove(bullet);
+    if(bullets.get(b).getX() > 1200){
+      bullets.remove(bullets.get(b));
+      b--;
     }
   }
 }
