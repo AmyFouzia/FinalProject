@@ -8,11 +8,20 @@ Enemy newEnemy3;
 Enemy newEnemy5;
 //Enemy newEnemy6;
 Enemy newEnemy7;
-Character character;
-Bullet bullet;
+Bullet bullet1;
+Bullet bullet2;
+Bullet bullet3;
+Bullet bullet4;
+Bullet bullet5;
+Bullet bullet6;
+Bullet bullet7;
+Bullet bullet8;
+Bullet bullet9;
 boolean shoot = false;
+Character character;
 PImage background;
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
+ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
 void setup() {
   Enemies.add(newEnemy1 = new Enemy(1020, 50, 50, "enemy.png"));
@@ -23,12 +32,21 @@ void setup() {
   //Enemies.add(newEnemy6 = new Enemy(1020, 400, 50, "enemy.png"));
   Enemies.add(newEnemy7 = new Enemy(1020, 470, 50, "enemy.png")); 
   
+  bullets.add(bullet1 = new Bullet(-20, -20));
+  bullets.add(bullet2 = new Bullet(-20, -20));
+  bullets.add(bullet3 = new Bullet(-20, -20));
+  bullets.add(bullet4 = new Bullet(-20, -20));
+  bullets.add(bullet5 = new Bullet(-20, -20));
+  bullets.add(bullet6 = new Bullet(-20, -20));
+  bullets.add(bullet7 = new Bullet(-20, -20));
+  bullets.add(bullet8 = new Bullet(-20, -20));
+  bullets.add(bullet9 = new Bullet(-20, -20));
+  
   size(1000, 563); 
   background = loadImage("background.gif");
   noStroke();  
   
   character = new Character(2.5, "player.png");
-  bullet = new Bullet(-20, -20);
   
 }
 
@@ -53,17 +71,21 @@ void draw() {
     character.move();
   }
   
-  if (shoot){
-    noLoop();
-    bullet.setX(character.getX());
-    bullet.setY(character.getY());
-    loop();
-    bullet.addToX(10);
-  } 
-  shoot = false;
+  if(shoot){
+    for(Bullet bullet : bullets){
+       bullet.setX(character.getX());
+       bullet.setY(character.getY());
+       
+       bullet.addToX(10);
+         if (bullet.getX() > 1000){
+           bullet.setX(-20);
+         }    
+     }
+  }
+  
 }
 
 
-void mouseClicked() {
+void mousePressed() {
   shoot = true;
 }

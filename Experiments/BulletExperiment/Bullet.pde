@@ -5,8 +5,16 @@ public class Bullet{
   public Bullet(float xcor, float ycor){
     bX = xcor;
     bY = ycor;
-  }public void setX(float x){
-    bX = x;
+  }
+  
+  public float getX(){
+    return bX;
+  }
+  
+  public void setX(float x){
+    
+bX = x;
+    
     background(background);
     rect(bX, bY, 30, 30);
     fill(255,255,102);
@@ -21,7 +29,6 @@ public class Bullet{
   
   public void addToX(int x){
     bX += x;
-    background(background);
     rect(bX, bY, 30, 30);
     fill(255,255,102);
   }

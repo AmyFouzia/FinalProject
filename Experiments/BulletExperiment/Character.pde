@@ -7,11 +7,13 @@ public class Character{
   public Character(float e, String file){
     easing = e;
     player = loadImage(file);
-  }public float getX(){
-    return eX;
   }
   
-  public float getY(){
+  public float getX(){
+    return eX;
+  }     
+  
+  float getY(){
     return eY;
   }
   
@@ -36,7 +38,4 @@ public class Character{
     return false;
   }
   
-  public void shoot(){
-    bullet.move();
-  }
 }
