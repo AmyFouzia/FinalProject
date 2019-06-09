@@ -14,23 +14,27 @@ public class Bullet{
   public void setX(float x){
     
 bX = x;
-    
-    background(background);
-    rect(bX, bY, 30, 30);
+  
     fill(255,255,102);
+    rect(bX, bY, 5, 5);
   }
   
   public void setY(float y){
     bY = y;
-    background(background);
-    rect(bX, bY, 30, 30);
     fill(255,255,102);
+    rect(bX, bY, 5, 5);
   }
   
   public void addToX(int x){
     bX += x;
-    rect(bX, bY, 30, 30);
     fill(255,255,102);
+    rect(bX, bY, 5, 5);
+  }
+  
+  public boolean containsPoint(int X, int Y){
+    if( X >= bX - 30 && X <= bX + 30 && 
+        Y >= bY - 30 && Y <= bY + 30 ){return true;}
+    return false;
   }
   
 }

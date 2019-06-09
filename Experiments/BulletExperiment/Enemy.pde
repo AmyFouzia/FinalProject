@@ -35,10 +35,14 @@ public class Enemy{
     eX -= x;
     image(enemy, eX, eY, Size, Size);
   }
-  
 
   public boolean isHitting(Character Player){
     if(Player.containsPoint(this.eX, this.eY)){return true;}
+    return false;
+  }
+  
+  public boolean isHitting(Bullet bullet){
+    if(bullet.containsPoint(this.eX, this.eY)){return true;}
     return false;
   }
   

@@ -1,13 +1,5 @@
 import java.lang.Math; 
 import java.util.*;
-//enemy spawn
-Enemy newEnemy1;
-//Enemy newEnemy2;
-Enemy newEnemy3;
-//Enemy newEnemy4;
-Enemy newEnemy5;
-//Enemy newEnemy6;
-Enemy newEnemy7;
 boolean shoot = false;
 Character character;
 PImage background;
@@ -15,13 +7,14 @@ ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
 void setup() {
-  Enemies.add(newEnemy1 = new Enemy(1020, 50, 50, "enemy.png"));
-  //Enemies.add(newEnemy2 = new Enemy(1020, 120, 50, "enemy.png"));
-  Enemies.add(newEnemy3 = new Enemy(1020, 190, 50, "enemy.png"));   
-  //Enemies.add(newEnemy4 = new Enemy(1020, 260, 50, "enemy.png")); 
-  Enemies.add(newEnemy5 = new Enemy(1020, 330, 50, "enemy.png")); 
-  //Enemies.add(newEnemy6 = new Enemy(1020, 400, 50, "enemy.png"));
-  Enemies.add(newEnemy7 = new Enemy(1020, 470, 50, "enemy.png")); 
+  Enemies.add(new Enemy(1020, 50, 50, "enemy.png"));
+  Enemies.add(new Enemy(1020, 120, 50, "enemy.png"));
+  Enemies.add(new Enemy(1020, 190, 50, "enemy.png"));   
+  Enemies.add(new Enemy(1020, 260, 50, "enemy.png")); 
+  Enemies.add(new Enemy(1020, 330, 50, "enemy.png")); 
+  Enemies.add(new Enemy(1020, 400, 50, "enemy.png"));
+  Enemies.add(new Enemy(1020, 470, 50, "enemy.png")); 
+  Enemies.add(new Enemy(1020, 540, 50, "enemy.png")); 
   
   size(1000, 563); 
   background = loadImage("background.gif");
@@ -58,6 +51,12 @@ void draw() {
     if(bullets.get(b).getX() > 1200){
       bullets.remove(bullets.get(b));
       b--;
+    }
+    for(int e = 0; e < Enemies.size(); e++){
+      if(Enemies.get(e).isHitting(bullets.get(b))){
+        Enemies.remove(Enemies.get(e));
+        e--;
+      }
     }
   }
 }
