@@ -32,8 +32,8 @@ bX = x;
   }
   
   public boolean containsPoint(int X, int Y){
-    if( X >= bX - 30 && X <= bX + 30 && 
-        Y >= bY - 30 && Y <= bY + 30 ){return true;}
+    if( X >= bX - 20 && X <= bX + 20 && 
+        Y >= bY - 20 && Y <= bY + 20 ){return true;}
     return false;
   }
   

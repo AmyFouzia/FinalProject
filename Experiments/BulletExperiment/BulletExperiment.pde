@@ -5,6 +5,9 @@ Character character;
 PImage background;
 ArrayList<Enemy> Enemies = new ArrayList<Enemy>();
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
+int score = 0;
+int numKilled = 0;
+int lives = 0;
 
 void setup() {
   Enemies.add(new Enemy(1020, 50, 50, "enemy.png"));
@@ -35,27 +38,32 @@ void draw() {
     }
     
     if(enemy.isHitting(character)){
+      fill(0, 102, 153);
       background(51);
       textSize(32);
-      text("game over", 10, 30); 
-      fill(0, 102, 153);
+      text("Game Over", 10, 30); 
+      text("Score: " + score , 10, 70); 
+      text("Number of Enemies Killed: " + numKilled, 10, 110); 
       noLoop();
     }
     
     character.move();
   }
   
-  for (int b = 0; b < bullets.size(); b++){
+  for (int b = 0; b < bullets.size(); b++) {
     bullets.get(b).setX(bullets.get(b).getX() +10);
-    
-    if(bullets.get(b).getX() > 1200){
+
+    if (bullets.get(b).getX() > 1200) {
       bullets.remove(bullets.get(b));
       b--;
-    }
-    for(int e = 0; e < Enemies.size(); e++){
-      if(Enemies.get(e).isHitting(bullets.get(b))){
-        Enemies.remove(Enemies.get(e));
-        e--;
+    } else {
+      for (int e = 0; e < Enemies.size(); e++) {
+        if (Enemies.get(e).isHitting(bullets.get(b))) {
+          score += 10;
+          numKilled += 1;
+          Enemies.remove(Enemies.get(e));
+          e--;
+        }
       }
     }
   }
