@@ -9,6 +9,14 @@ public class Character{
     player = loadImage(file);
   }
   
+  public float getX(){
+    return eX;
+  }     
+  
+  float getY(){
+    return eY;
+  }
+  
   public void move() {
     float targetX = mouseX;
     float targetY = mouseY;
@@ -30,8 +38,4 @@ public class Character{
     return false;
   }
   
-  public boolean isAlive(Enemy enemy){
-    //if(isHitting(enemy)){return false;}
-    return true;
-  }
 }
