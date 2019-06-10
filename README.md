@@ -49,7 +49,7 @@
 ## Tuesday, June 4, 2019
 ##aka grind day
 
-- realized I was way behind
+- Im way behind
 - rather than using branches I ended up using my experiments folder to figure things out, it really helped since I was working on my own
 - moved code from draw() into two separate character and enemy classes
 - realized im an idiot for not making a parent class for them both
@@ -61,7 +61,20 @@
 - collisionExp is done, and everything is in separate classes finally so updated prototype to show all my changes
 - started on bulletExp to actually make this into what I wanted it to be
 - it's june 5th now ...
-- 
+- i spent another 2 hrs trying to get the bullets to work but i dont think im functioning properly enough to do it right now
+- the code I have for it so far is in /Experiments/BulletExperiment
+- the FinalGame folder will have my collision detection code
 
+## Saturday, June 8, 2019
+- fixed up bullet class
+- rearranged structure of code 
+- debugged until bullets worked
+- added score tracker and num of enemies killed tracker
+- these numbers display at end of game
 
+## Sunday, June 9, 2019
+- added start and end screens
+- utilized modes for that
+- spent some time debugging w structure/ placement
+- fixed score/ numKilled tracker
 
