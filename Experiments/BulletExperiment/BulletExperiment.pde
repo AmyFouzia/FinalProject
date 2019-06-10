@@ -11,7 +11,6 @@ int score = 0;
 int numKilled = 0;
 int lives = 3;
 String Mode = "start";
-boolean hasDamaged = false;
 
 void setup() {
   Enemies.add(new Enemy(1020, 50, 50, "enemy.png"));
@@ -35,13 +34,14 @@ void setup() {
 
 void draw() { 
   if(Mode == "start"){
+    
     fill(255, 44, 44);
     textSize(32);
     start.resize(1000, 563);
     background(start);
-    text("Click Anywhere To Play", 300, 35);
+    text("Press Any Key To Play", 300, 35);
     
-    if(mousePressed){ Mode = "game"; }
+    if(keyPressed){ Mode = "game"; }
   }
   
   if(Mode == "game"){
@@ -50,22 +50,18 @@ void draw() {
     textSize(22);
     //text("Lives:" + lives, 20, 35);
   
-    for(Enemy enemy : Enemies){
-      enemy.subtractFromX((int)random(3, 8));
+    for(int e = 0; e < Enemies.size(); e++){
+      Enemies.get(e).subtractFromX((int)random(3, 8));
+      Enemies.get(e).subtractFromY((int)random(0, 3));
+      Enemies.get(e).addToY((int)random(0, 3));
     
-      if(enemy.getX() < -20){
-        enemy.setX(1020);
+      if(Enemies.get(e).getX() < -20){
+        Enemies.get(e).setX(1020);
       }
     
-      if(enemy.isHitting(character)){
+      if(Enemies.get(e).isHitting(character)){
         Mode = "end";
-        //hasDamaged = true;
       }
-      /*if (hasDamaged){
-        lives--;
-        hasDamaged = false;
-        if(lives == 0){Mode = "end";}
-      }*/
     
       character.move();
     }
@@ -93,6 +89,10 @@ void draw() {
   }
   
   if(Mode == "end"){
+    for(int e = 0; e < Enemies.size(); e++){
+      Enemies.get(e).setX(1020);
+    }
+    
     fill(255, 44, 44);
     gameOver.resize(1000, 563);
     background(gameOver);
@@ -107,7 +107,11 @@ void draw() {
     fill(255, 44, 44);
     text("Number of Enemies Killed: " + numKilled, 550, 560); 
     
-    if(mousePressed){Mode = "start";}
+    if(mousePressed){
+      score = 0;
+      numKilled = 0;
+      Mode = "start";
+    }
   }
 }
 

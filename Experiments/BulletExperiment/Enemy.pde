@@ -3,6 +3,7 @@ public class Enemy{
   private int eX;
   private int eY;
   int Size;
+  boolean hasDamaged = false;
   
   public Enemy(int xcor, int ycor, int size, String file){
     eX = xcor;
@@ -35,9 +36,22 @@ public class Enemy{
     eX -= x;
     image(enemy, eX, eY, Size, Size);
   }
+  
+  public void subtractFromY(int y){
+    eY -= y;
+    image(enemy, eX, eY, Size, Size);
+  }
+  
+  public void addToY(int y){
+    eY += y;
+    image(enemy, eX, eY, Size, Size);
+  }
 
   public boolean isHitting(Character Player){
-    if(Player.containsPoint(this.eX, this.eY)){return true;}
+    if(Player.containsPoint(this.eX, this.eY)){
+      hasDamaged = true;
+      return true;
+    }
     return false;
   }
   
